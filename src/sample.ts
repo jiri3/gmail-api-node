@@ -5,7 +5,8 @@ import GmailApi from "./GmailApi";
 import * as Constants from "./Constants";
 
 /**
- * Gmail APIを利用して、メッセージを取得して表示するサンプルです.
+ * Gmail APIを利用して、
+ * メッセージを取得して本文を表示するサンプルです.
  */
 getMessageDetail().then((message) => {
     if (!message) return;
@@ -20,6 +21,10 @@ getMessageDetail().then((message) => {
 
     // メール本文を表示する
     console.log(contents);
+
+    // HACK:認可で使ったブラウザを閉じないと
+    // プロセスが終えられないための措置
+    process.exit();
 });
 
 async function getMessageDetail(): Promise<

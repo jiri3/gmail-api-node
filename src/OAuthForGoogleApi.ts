@@ -47,7 +47,6 @@ export default class OAuthForGoogleApi {
                 });
                 const server = http
                     .createServer((req, res) => {
-                        console.log(req.url);
                         if (req.url && req.url.indexOf("/?code=") > -1) {
                             // ユーザがトークンの発行を許可した場合
                             const searchParams = new url.URL(
@@ -59,7 +58,6 @@ export default class OAuthForGoogleApi {
                             );
                             server.close();
                             const code = searchParams.get("code");
-                            console.log(`code = ${code}`);
                             if (code) {
                                 oAuthClient.getToken(code).then((res) => {
                                     oAuthClient.setCredentials(res.tokens);
@@ -68,8 +66,6 @@ export default class OAuthForGoogleApi {
                             } else {
                                 reject(new Error("codeが取得できませんでした"));
                             }
-                        } else {
-                            //reject(new Error("codeが取得できませんでした"));
                         }
                     })
                     .listen(3000, () => {
