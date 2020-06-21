@@ -22,8 +22,8 @@ getMessageDetail().then((message) => {
     // メール本文を表示する
     console.log(contents);
 
-    // HACK:認可で使ったブラウザを閉じないと
-    // プロセスが終えられないための措置
+    // HACK:認可のため使ったWebブラウザを閉じるまで
+    // プロセスが終わらないので強制的にプロセスを終了する
     process.exit();
 });
 
