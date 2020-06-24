@@ -1,5 +1,4 @@
 import { gmail_v1 } from "googleapis";
-import { GaxiosPromise } from "googleapis-common";
 import OAuthForGoogleApi from "./OAuthForGoogleApi";
 import GmailApi from "./GmailApi";
 import * as Constants from "./Constants";

@@ -78,6 +78,7 @@ export default class OAuthForGoogleApi {
                         }
                     })
                     .listen(3000, () => {
+                        // サーバー起動時の処理
                         /**
                          * (A) ユーザーエージェント(Webブラウザ)を認可サーバーに導き、OAuthフローを開始する.
                          * (B) ユーザー認証とユーザーからの認可を得る.
