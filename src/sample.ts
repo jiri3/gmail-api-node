@@ -32,7 +32,7 @@ async function getMessageDetail(): Promise<
     // メールの検索条件を生成する
     const param: gmail_v1.Params$Resource$Users$Messages$List = {
         userId: `me`,
-        q: `from:info@mail.rakuten-card.co.jp`,
+        q: `from:xxx@example.com`,
     };
 
     // OAuthクライアントを生成する
